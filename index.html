@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>CFGDegree Timer</title>
+	<meta name="description" content="Timer" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./style.css" />
+	<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23ff6b6b' d='M8 8h48v48H8z'/%3E%3Ctext x='50%' y='54%' text-anchor='middle' font-size='36' fill='white' font-family='monospace'%3EC%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+	<div class="bg">
+		<div class="bg__gradient"></div>
+		<div class="bg__blob bg__blob--1"></div>
+		<div class="bg__blob bg__blob--2"></div>
+		<div class="bg__grid"></div>
+	</div>
+
+	<header class="app-header">
+		<h1 class="branding">
+			<span class="branding__top" id="brandTop">Timer</span>
+			<span class="branding__bottom" id="brandBottom">Autumn 2025</span>
+		</h1>
+		<div class="header-actions">
+			<button id="editTitleBtn" class="btn btn--ghost" aria-pressed="false" aria-label="Edit title">Edit title</button>
+		</div>
+	</header>
+
+	<main class="app">
+		<section class="timer">
+			<div class="timer__visual">
+				<svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+					<defs>
+						<linearGradient id="ringGradient" x1="0" x2="1" y1="0" y2="1">
+							<stop offset="0%" stop-color="#FF4EA1" />
+							<stop offset="50%" stop-color="#FF7AC0" />
+							<stop offset="100%" stop-color="#FFC2DD" />
+						</linearGradient>
+					</defs>
+					<circle class="ring__bg" cx="60" cy="60" r="52" />
+					<circle class="ring__progress" cx="60" cy="60" r="52" stroke="url(#ringGradient)" />
+				</svg>
+				<div class="timer__display" aria-live="polite" aria-atomic="true">
+					<span id="minutes">25</span>
+					<span class="colon">:</span>
+					<span id="seconds">00</span>
+				</div>
+			</div>
+
+			<div class="controls">
+				<div class="controls__row">
+					<button id="startPauseBtn" class="btn btn--primary" aria-pressed="false">Start</button>
+					<button id="resetBtn" class="btn">Reset</button>
+				</div>
+				<div class="controls__row">
+					<button data-preset="5" class="chip">5m</button>
+					<button data-preset="10" class="chip">10m</button>
+					<button data-preset="15" class="chip">15m</button>
+					<button data-preset="25" class="chip chip--accent">25m</button>
+					<button data-preset="45" class="chip">45m</button>
+				</div>
+				<div class="controls__row">
+					<button id="minusBtn" class="btn btn--ghost" aria-label="Minus one minute">−1m</button>
+					<button id="plusBtn" class="btn btn--ghost" aria-label="Plus one minute">+1m</button>
+					<label class="switch" title="Soothing sound">
+						<input id="tickToggle" type="checkbox">
+						<span class="switch__label">Sound</span>
+					</label>
+				</div>
+			</div>
+		</section>
+
+		<section class="help">
+			<p class="hint">Shortcuts: Space = Start/Pause, R = Reset, ↑/↓ = ±1m, 1/5/0 = 10/50/25</p>
+		</section>
+	</main>
+
+	<canvas id="confettiCanvas" class="confetti"></canvas>
+
+	<script src="./script.js"></script>
+</body>
+</html>
