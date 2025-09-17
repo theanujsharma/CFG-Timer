@@ -32,6 +32,25 @@
 	<main class="app">
 		<section class="timer">
 			<div class="timer__visual">
+				<div class="timer__crown timer__crown--inner" aria-hidden="true">
+					<svg viewBox="0 0 120 70" class="crown" role="img" aria-label="Crown">
+						<defs>
+							<linearGradient id="crownGradient" x1="0" y1="0" x2="1" y2="1">
+								<stop offset="0%" stop-color="#FF4EA1" />
+								<stop offset="100%" stop-color="#FF7AC0" />
+							</linearGradient>
+							<linearGradient id="crownShine" x1="0" y1="0" x2="0" y2="1">
+								<stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+								<stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+							</linearGradient>
+						</defs>
+						<path d="M8 58 L18 20 L40 42 L60 12 L80 42 L102 20 L112 58 Z" fill="url(#crownGradient)" stroke="#ff9ad3" stroke-width="2"/>
+						<rect x="16" y="58" width="88" height="8" rx="4" fill="url(#crownGradient)"/>
+						<ellipse cx="60" cy="26" rx="10" ry="6" fill="#ffc2dd"/>
+						<path d="M8 58 L112 58" stroke="#ff9ad3" stroke-width="2" opacity="0.6"/>
+						<path d="M8 58 C30 62, 90 62, 112 58" fill="url(#crownShine)"/>
+					</svg>
+				</div>
 				<svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
 					<defs>
 						<linearGradient id="ringGradient" x1="0" x2="1" y1="0" y2="1">
@@ -43,6 +62,7 @@
 					<circle class="ring__bg" cx="60" cy="60" r="52" />
 					<circle class="ring__progress" cx="60" cy="60" r="52" stroke="url(#ringGradient)" />
 				</svg>
+				<div class="timer__icon" aria-hidden="true">👩‍💻</div>
 				<div class="timer__display" aria-live="polite" aria-atomic="true">
 					<span id="minutes">25</span>
 					<span class="colon">:</span>
