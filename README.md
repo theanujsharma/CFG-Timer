@@ -1,4 +1,4 @@
-# CFGDegree Autumn 2025 — Animated Class Timer
+# CFGDegree Class Timer
 
 A fun and minimal class timer with animated progress ring, keyboard shortcuts, confetti celebration, and subtle sounds.
 
